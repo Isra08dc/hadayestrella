@@ -1,5 +1,6 @@
 var starImg,bgImg;
 var star, starBody;
+var fairy, fairyImg
 //crea la variable para el sprite del hada y fairyImg
 
 const Engine = Matter.Engine;
@@ -48,7 +49,9 @@ function draw() {
 
   console.log(star.y);
 
-  //escribe aquí el código para detener la estrella en la mano del hada
+  if(star.y>470 && starBody.position.y>470){
+    Matter.Body.setStatic(starBody,true);
+  }
 
   drawSprites();
 
@@ -60,6 +63,13 @@ function keyPressed() {
 		Matter.Body.setStatic(starBody,false); 
 	}
 
+	if (keyCode === RIGHT_ARROW) {
+		fairy.x=-10
+	}
+
+	if (keyCode === LEFT_ARROW) {
+		fairy.x=+10
+	}
 	//escribe el código para mover al hada a la izquierda y derecha
 	
 }
