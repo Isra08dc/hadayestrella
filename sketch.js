@@ -14,17 +14,17 @@ function preload()
 	bgImg = loadImage("images/starNight.png");
 	fairyVoice = loadSound("sound/JoyMusic.mp3");
 	fairyImg = loadAnimation("images/fairyImage1.png", "images/fairyImage2.png");
-	
+}
 function setup() {
 	createCanvas(800, 750);
-}
+
 
 
 	star = createSprite(650,30);
 	star.addImage(starImg);
 	star.scale = 0.2;
 
-    fairy = createSprite(200, 200);
+    fairy = createSprite(400, 510);
 	fairy.addAnimation("fairy",fairyImg);
 	fairy.scale = 0.2;
 
@@ -62,11 +62,11 @@ function keyPressed() {
 	}
 
 	if (keyCode === RIGHT_ARROW) {
-		fairy.x=+10
+		fairy.x=fairy.x+10
 	}
 
 	if (keyCode === LEFT_ARROW) {
-		fairy.x=-10
+		fairy.x=fairy.x-10
 	}
 	//escribe el código para mover al hada a la izquierda y derecha
 	
